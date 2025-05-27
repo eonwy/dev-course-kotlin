@@ -14,6 +14,16 @@ class Coffee(
     // getter 는 열고 setter 는 닫지만 값을 수정하기 위한 함수는 필요
     private var _totalSalesCnt: Int = 0
 ) {
+
+    // static 변수 선언하기
+    companion object{
+        val category = "DRINK"
+
+        fun printCategory(){
+            println(category)
+        }
+    }
+
     // field : backing field 에 접근하기 위한 키워드
     var name:String? = null
         get() = "$field[커피]"
@@ -45,6 +55,10 @@ fun main(){
     americano.name = "americano"
     println(americano.name)
     americano.addTotalSalesCnt(10)
+
+
+    println(Coffee.category)
+    Coffee.printCategory()
 
 }
 
